@@ -12,6 +12,7 @@ export class ItemDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
+    console.log(navParams.get('item'));
     this.selectedItem = navParams.get('item');
   }
 }

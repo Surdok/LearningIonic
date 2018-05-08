@@ -4,9 +4,13 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
+import { ActionSheetPage } from '../pages/action-sheet/action-sheet';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+//import { NavController, NavParams } from 'ionic-angular';
+
 
 
 @Component({
@@ -23,13 +27,14 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
   ) {
     this.initializeApp();
 
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
+      { title: 'Action Sheet', component: ActionSheetPage },
       { title: 'My First List', component: ListPage }
     ];
   }
@@ -48,5 +53,11 @@ export class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+
+  sendpageinfo(page){
+    //this.navCtrl.push(ItemDetailsPage, {
+      //page: page
+    //});
   }
 }
