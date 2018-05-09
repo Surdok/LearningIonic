@@ -20,6 +20,24 @@
   </p>
   <p>
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
+    <button ion-button color="primary" (click)="AddItem()">Add Item</button>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input [(ngModel)]="Item.title" type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Message</ion-label>
+        <ion-input [(ngModel)]="Item.message" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button color="primary" (click)="AddItem(Item)">Add Item</button>
+      </ion-item>
+    
+    </ion-list>
   </p>
 
 </ion-content>

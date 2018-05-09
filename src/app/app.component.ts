@@ -9,10 +9,11 @@ import { ActionSheetPage } from '../pages/action-sheet/action-sheet';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
 //import { NavController, NavParams } from 'ionic-angular';
 
 
-
+//declare var db = firebase.firestore();
 @Component({
   templateUrl: 'app.html'
 })
@@ -27,9 +28,10 @@ export class MyApp {
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen,
+    public splashScreen: SplashScreen
   ) {
     this.initializeApp();
+   
 
     // set our app's pages
     this.pages = [

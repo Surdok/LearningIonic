@@ -14,7 +14,39 @@
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    
+    var config = {
+      apiKey: "AIzaSyDvLKRw-kIpHs3AqXrcikv4qY7DRUrN98A",
+      authDomain: "ionictodo-6e116.firebaseapp.com",
+      databaseURL: "https://ionictodo-6e116.firebaseio.com",
+      projectId: "ionictodo-6e116",
+      storageBucket: "ionictodo-6e116.appspot.com",
+      messagingSenderId: "25010028670"
+    };
+    firebase.initializeApp(config);
+    const firestore = firebase.firestore();
+  const settings = {/* your settings... */ timestampsInSnapshots: true};
+  firestore.settings(settings);
+  var db = firebase.firestore();
 
+  db.collection("Todo List")
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+    
+  </script>
+  
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
 
