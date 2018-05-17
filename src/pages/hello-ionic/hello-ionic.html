@@ -25,12 +25,12 @@
 
       <ion-item>
         <ion-label floating>Title</ion-label>
-        <ion-input [(ngModel)]="Item.title" type="text"></ion-input>
+        <ion-input [(ngModel)]="Item.Title" type="text"></ion-input>
       </ion-item>
     
       <ion-item>
         <ion-label floating>Message</ion-label>
-        <ion-input [(ngModel)]="Item.message" type="text"></ion-input>
+        <ion-input [(ngModel)]="Item.Message" type="text"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -41,12 +41,12 @@
 
     <h3>List of items that are in database!</h3>
 
-    <ion-card>
+    <ion-card *ngFor="let item of items">
       <ion-card-header>
-        Header
+        {{item.Title}}
       </ion-card-header>
       <ion-card-content>
-        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+        {{item.Message}}
       </ion-card-content>
     </ion-card>
 
